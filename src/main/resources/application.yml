@@ -1,0 +1,26 @@
+#指定服务端号
+server:
+  port: 8091
+
+
+
+#公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
+mybatis:
+  typeAliasesPackage: com.project.tool.model
+  mapperLocations: classpath:mapper/*.xml
+
+#开发配置
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/tools
+    username: postgres
+    password: robin
+    driver-class-name: org.postgresql.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+          properties:
+              hibernate:
+                   temp:
+                      use_jdbc_metadata_defaults: false
+
