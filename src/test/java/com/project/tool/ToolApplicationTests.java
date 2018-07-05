@@ -20,10 +20,11 @@ public class ToolApplicationTests {
 	}
 
 	//该配置文件放在src\\main\\resources\\该路径下即可
-	@Test
+	//此方法谨慎使用  运行将导致更新代码丢失
+	/*@Test
 	public  void tets() {
 		String[] args = new String[] { "-configfile", "src\\main\\resources\\mybatis-generator.xml", "-overwrite" };
 		ShellRunner.main(args);
-	}
+	}*/
 
 }

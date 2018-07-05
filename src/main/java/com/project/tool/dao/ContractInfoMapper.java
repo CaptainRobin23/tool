@@ -1,7 +1,9 @@
 package com.project.tool.dao;
 
 import com.project.tool.model.ContractInfo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ContractInfoMapper {
     int deleteByPrimaryKey(String id);
 

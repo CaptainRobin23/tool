@@ -1,7 +1,11 @@
 package com.project.tool.dao;
 
 import com.project.tool.model.CompanyInfo;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface CompanyInfoMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +18,6 @@ public interface CompanyInfoMapper {
     int updateByPrimaryKeySelective(CompanyInfo record);
 
     int updateByPrimaryKey(CompanyInfo record);
+
+    List<CompanyInfo> selectAll();
 }
