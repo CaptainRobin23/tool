@@ -111,4 +111,42 @@
     from company_info
   </select>
 
+
+  <insert id="batchInsertCompanyInfos" parameterType="java.util.List">
+    INSERT INTO
+    company_info (<include refid="Base_Column_List"/>)
+    VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+      (
+      #{item.id},
+      #{item.companyName},
+      #{item.companyCode},
+      #{item.contractCode},
+      #{item.createTime},
+      #{item.updateTime}
+      )
+    </foreach>
+  </insert>
+
+  <update id="batchUpdateMaterialBoms" parameterType="java.util.ArrayList">
+    <foreach collection="list" separator=";" item="item">
+      UPDATE company_info
+      <set>
+        <if test="item.companyName != null">
+          company_name = #{item.companyName},
+        </if>
+        <if test="item.companyCode != null">
+          company_code = #{item.companyCode},
+        </if>
+        <if test="item.contractCode != null">
+          contract_code = #{item.contractCode},
+        </if>
+        <if test="item.updateTime != null">
+          update_time = #{item.updateTime},
+        </if>
+      </set>
+      WHERE id = #{item.id}
+    </foreach>
+  </update>
+
 </mapper>

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface CompanyInfoMapper {
     int deleteByPrimaryKey(String id);
 
@@ -20,4 +19,8 @@ public interface CompanyInfoMapper {
     int updateByPrimaryKey(CompanyInfo record);
 
     List<CompanyInfo> selectAll();
+
+    Integer batchInsertCompanyInfos(List<CompanyInfo> companyInfos);
+
+    Integer batchUpdateCompanyInfos(List<CompanyInfo> updateCompanyInfos);
 }

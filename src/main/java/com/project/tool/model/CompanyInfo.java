@@ -62,4 +62,16 @@ public class CompanyInfo {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "CompanyInfo{" +
+                "id='" + id + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", companyCode='" + companyCode + '\'' +
+                ", contractCode='" + contractCode + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

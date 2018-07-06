@@ -1,6 +1,9 @@
 package com.project.tool.service;
 
+import com.project.tool.model.CompanyInfo;
 import com.project.tool.util.Result;
+
+import java.util.List;
 
 /**
  * @Author: xueqin
@@ -11,4 +14,6 @@ import com.project.tool.util.Result;
 public interface CompanyInfoService {
 
     Result getList();
+
+    Result saveOrUpdateCompanyInfos(List<CompanyInfo> companyInfos);
 }
